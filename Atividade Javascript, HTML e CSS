@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulação do DOM com JavaScript</title>
+        <style>
+            /* estilo para alterar */
+            #elemento1 {
+                color: blue;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Manipulação do DOM com JavaScript</h1>
+        <p id="elemento1">Este é um parágrafo que pode ser alterado.</p>
+        <button onclick="adicionarElemento()">Adicionar Elemento</button>
+        <button onclick="alterarConteudo()">Alterar Conteúdo</button>
+        <button onclick="mudarEstilo()">Mudar Estilo</button>
+        <button onclick="removerElemento()">Remover Elemento</button>
+        <button onclick="mudarTexto()">Mudar Texto</button>
+        <br><br>
+        <input type="text" id="textoInput" placeholder="Digite algo...">
+        
+    </body>
+<script>
+    function adicionarElemento() {
+        let novoElemento = document.createElement("p");
+        let novoInput = document.createElement("input");
+        novoInput.setAttribute("type", "text");
+        novoInput.setAttribute("placeholder", "Digite algo...");
+        novoElemento.appendChild(novoInput);
+        document.body.appendChild(novoElemento);
+    }
+    
+    // Alterando o conteúdo de um elemento existente
+    function alterarConteudo() {
+        document.getElementById("elemento1").innerHTML = "Este conteúdo foi alterado!";
+    }
+    
+    // Mudando o estilo de um elemento existente
+    function mudarEstilo() {
+        document.getElementById("elemento1").style.color = "red";
+        document.getElementById("elemento1").style.fontSize = "32px";
+    }
+    
+    // Removendo um elemento existente
+    function removerElemento() {
+        let elemento = document.getElementById("elemento1");
+        elemento.parentNode.removeChild(elemento);
+    }
+    
+    // Mudando o texto de um elemento input
+    function mudarTexto() {
+        document.getElementById("textoInput").value = "Olá Mundo!";
+    }
+</script>
+
+</html>
